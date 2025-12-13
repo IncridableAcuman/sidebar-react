@@ -1,6 +1,8 @@
-import { Code, Github, Globe, Instagram, Linkedin, Moon, Network, University } from "lucide-react"
+import { Code, Github, Globe, Instagram, Linkedin, Moon, Sun, University } from "lucide-react"
+import { UseTheme } from "../provider/ThemeProvider"
 
 const SidebarComponent = () => {
+    const {theme,toggleTheme} = UseTheme();
     const networks = [
         { name: 'LinkedIn', path: "https://www.linkedin.com/in/izzatbek-abdusharipov/", icons: <Linkedin /> },
         { name: 'Github', path: 'https://github.com/IncridableAcuman', icons: <Github /> },
@@ -13,9 +15,11 @@ const SidebarComponent = () => {
 
     ]
     return (
-        <div className={`w-64 min-h-screen bg-gray-900 text-white shadow border-r`}>
+        <div className={`w-64 min-h-screen ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}  shadow border-r scroll`}>
            <div className="p-2">
-             <Moon className="cursor-pointer"/>
+             <button onClick={toggleTheme}>
+                {theme === 'light' ? <Moon className="cursor-pointer"/> : <Sun className="cursor-pointer"/>}
+             </button>
            </div>
             <div className="flex flex-col items-center p-4 space-y-2 border-b border-dashed border-gray-700">
                 <img src="./image.png" alt="profile" className="w-20 h-20  object-cover rounded-full border-4 shadow cursor-pointer" />
@@ -24,10 +28,12 @@ const SidebarComponent = () => {
                     <h2>Izzatbek Abdusharipov</h2>
                 </div>
             </div>
-            <ul className="space-y-6 p-4 text-white">
+            <ul className="space-y-6 p-4 ">
                 {
                     networks.map((network, index) => (
-                        <li key={index} className="hover:bg-gray-100 hover:text-gray-900 transition duration-300 rounded-md p-2">
+                        <li key={index} className={`${theme === 'light' ? 'bg-gray-900 hover:text-gray-100'
+                             : 'hover:bg-gray-100 hover:text-gray-900'
+                        } transition duration-300 rounded-md p-2`}>
                             <a href={network.path} className="flex items-center gap-3" >
                                 {network.icons}
                                 {network.name}
@@ -37,7 +43,7 @@ const SidebarComponent = () => {
                     ))
                 }
             </ul>
-            <div className="text-center p-3 text-xs">
+            <div className=" px-3 py-2 text-center text-xs">
                 © 2025 Izzatbek Abdusharipov
                 Built with React & Tailwind CSS
             </div>
