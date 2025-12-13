@@ -1,37 +1,46 @@
-import { Home, Settings, UserRound } from "lucide-react"
-import { Link } from "react-router-dom"
-
+import { Code, Github, Globe, Instagram, Linkedin, Moon, Network, University } from "lucide-react"
 
 const SidebarComponent = () => {
+    const networks = [
+        { name: 'LinkedIn', path: "https://www.linkedin.com/in/izzatbek-abdusharipov/", icons: <Linkedin /> },
+        { name: 'Github', path: 'https://github.com/IncridableAcuman', icons: <Github /> },
+        { name: 'Instagram', path: 'https://www.instagram.com/izzatbekdeveloper/', icons: <Instagram /> },
+        { name: 'Leetcode', path: 'https://leetcode.com/u/abdusharipovizzat03/', icons: <Code /> },
+        { name: 'Kep', path: '/https://kep.uz/users/abdusharipovizzat03', icons: <Globe /> },
+        { name: 'Telegram', path: 'https://leetcode.com/u/abdusharipovizzat03/', icons: <Globe /> },
+        { name: 'Medium', path: "#", icons: <Globe /> },
+        { name: 'Study', path: 'https://urdu.uz/uz', icons: <University /> },
+
+    ]
     return (
-        <div className={`w-64 h-screen bg-gray-900 text-white shadow border-r`}>
-            <div className="flex items-center justify-between gap-3 p-4 text-sm border-b border-dashed border-gray-700">
-                <img src="./image.png" alt="profile" className="w-14 h-14 object-cover rounded-full" />
-                <div className="space-y-2">
+        <div className={`w-64 min-h-screen bg-gray-900 text-white shadow border-r`}>
+           <div className="p-2">
+             <Moon className="cursor-pointer"/>
+           </div>
+            <div className="flex flex-col items-center p-4 space-y-2 border-b border-dashed border-gray-700">
+                <img src="./image.png" alt="profile" className="w-20 h-20  object-cover rounded-full border-4 shadow cursor-pointer" />
+                <div className="space-y-2 text-center">
                     <h2>Software Engineer</h2>
                     <h2>Izzatbek Abdusharipov</h2>
                 </div>
             </div>
-            <ul className="space-y-6 p-4">
-                <li>
-                    <Link to={"/dashboard"} className="flex items-center gap-4 cursor-pointer hover:bg-gray-100 hover:text-gray-900 transition duration-300 p-2 rounded-md">
-                        <Home />
-                        Dashboard
-                    </Link>
-                </li>
-                <li>
-                    <Link to={'/profile'} className="flex items-center gap-4 cursor-pointer hover:bg-gray-100 hover:text-gray-900 transition duration-300 p-2 rounded-md">
-                        <UserRound />
-                        Profile
-                    </Link>
-                </li>
-                <li>
-                    <Link to={'/settings'} className="flex items-center gap-4 cursor-pointer hover:bg-gray-100 hover:text-gray-900 transition duration-300 p-2 rounded-md">
-                        <Settings />
-                        Settings
-                    </Link>
-                </li>
+            <ul className="space-y-6 p-4 text-white">
+                {
+                    networks.map((network, index) => (
+                        <li key={index} className="hover:bg-gray-100 hover:text-gray-900 transition duration-300 rounded-md p-2">
+                            <a href={network.path} className="flex items-center gap-3" >
+                                {network.icons}
+                                {network.name}
+                            </a>
+
+                        </li>
+                    ))
+                }
             </ul>
+            <div className="text-center p-3 text-xs">
+                © 2025 Izzatbek Abdusharipov
+                Built with React & Tailwind CSS
+            </div>
         </div>
     )
 }
