@@ -15,13 +15,13 @@ const SidebarComponent = () => {
 
     ]
     return (
-        <div className={`w-64 min-h-screen ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}  shadow border-r scroll`}>
-           <div className="p-2">
+        <div className={`w-72 min-h-screen ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}  shadow scroll`}>
+           <div className="py-4 px-5">
              <button onClick={toggleTheme}>
                 {theme === 'light' ? <Moon className="cursor-pointer"/> : <Sun className="cursor-pointer"/>}
              </button>
            </div>
-            <div className="flex flex-col items-center p-4 space-y-2 border-b border-dashed border-gray-700">
+            <div className={`flex flex-col items-center p-4 space-y-2 border-b border-dashed ${theme === 'light' ? 'border-gray-700' : "border-gray-300"}`}>
                 <img src="./image.png" alt="profile" className="w-20 h-20  object-cover rounded-full border-4 shadow cursor-pointer" />
                 <div className="space-y-2 text-center">
                     <h2>Software Engineer</h2>
@@ -31,9 +31,7 @@ const SidebarComponent = () => {
             <ul className="space-y-6 p-4 ">
                 {
                     networks.map((network, index) => (
-                        <li key={index} className={`${theme === 'light' ? 'bg-gray-900 hover:text-gray-100'
-                             : 'hover:bg-gray-100 hover:text-gray-900'
-                        } transition duration-300 rounded-md p-2`}>
+                        <li key={index} className={`text-xl p-2 rounded-md transition duration-300`}>
                             <a href={network.path} className="flex items-center gap-3" >
                                 {network.icons}
                                 {network.name}
