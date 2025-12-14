@@ -23,7 +23,7 @@ const Dashboard = () => {
           I am also interested in learning about Docker, microservices and scalable architectures. Building efficient, secure and scalable systems based on software engineering principles is my main goal.</p>
       </motion.div>
       {/* technical skills */}
-      <div className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} p-6 rounded-md w-full h-full shadow-lg`}>
+      <div className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}  p-6 rounded-md w-full h-full shadow-lg`}>
         <motion.h1
         variants={cardVariants}
           className={`${theme === 'light' ? 'text-white' : 'text-gray-900'} text-2xl md:text-4xl font-semibold`}
@@ -39,7 +39,8 @@ const Dashboard = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.5 }}
             variants={cardVariants}
-            className={`${theme === 'light' ? 'bg-gray-900 border border-gray-800 text-white hover:bg-gray-800 transition duration-300 hover:shadow-cyan-500' : 'bg-gray-100 text-gray-800'} space-y-4 rounded-lg p-6 shadow-lg`}>
+            className={`${theme === 'light' ? 'bg-gray-900 border border-gray-800 text-white hover:bg-gray-800 transition duration-300 hover:shadow-cyan-500' : 'bg-gray-100 text-gray-800'} 
+            space-y-4 rounded-lg p-6 shadow-lg`}>
             <h6 className='text-blue-500 text-2xl font-semibold'>Algorithms & Problem Solving</h6>
             <div className='space-y-4'>
               <p>Dynamic Programming</p>
