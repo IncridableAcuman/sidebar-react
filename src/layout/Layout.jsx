@@ -5,13 +5,13 @@ import { UseTheme } from '../provider/ThemeProvider';
 const Layout = () => {
   const {theme} = UseTheme();
   return (
-    <div className='flex'>
-        <div className={`w-0 md:w-72 ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900' } min-h-screen shrink-0 overflow-y-scroll overflow-x-hidden`}>
+    <div className='flex h-screen overflow-hidden'>
+        <aside className={`hidden md:block w-72 shrink-0 overflow-y-auto ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
           <Sidebar/>
-        </div>
-        <div className='flex-1 overflow-y'>
-            <Outlet/>
-        </div>
+        </aside>
+        <main className='flex-1 h-screen overflow-y-auto'>
+          <Outlet/>
+        </main>
     </div>
   )
 }

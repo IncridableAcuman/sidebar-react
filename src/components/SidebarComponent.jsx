@@ -43,7 +43,8 @@ const SidebarComponent = () => {
                 }
             </ul>
             <div className="px-4 py-1 text-xs">
-                © 2025 Built with React & Tailwind CSS
+                <p>© 2025 Izzatbek Abdusharipov</p>
+                <p>Built with React & Tailwind CSS</p>
             </div>
         </div>
     )
