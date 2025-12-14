@@ -15,7 +15,7 @@ const SidebarComponent = () => {
 
     ]
     return (
-        <div className={`w-72 min-h-screen ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}  shadow scroll`}>
+        <div className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
            <div className="py-4 px-5">
              <button onClick={toggleTheme}>
                 {theme === 'light' ? <Moon className="cursor-pointer"/> : <Sun className="cursor-pointer"/>}
