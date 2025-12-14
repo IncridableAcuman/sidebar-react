@@ -31,7 +31,8 @@ const SidebarComponent = () => {
             <ul className="space-y-6 p-4 ">
                 {
                     networks.map((network, index) => (
-                        <li key={index} className={`text-xl p-2 rounded-md transition duration-300`}>
+                        <li key={index} className={`text-xl p-2 rounded-md transition-all
+                         text-gray-400 duration-300 hover:text-blue-500 hover:bg-linear-to-r hover:from-gray-800 hover:to-gray-700 `}>
                             <a href={network.path} className="flex items-center gap-3" >
                                 {network.icons}
                                 {network.name}
@@ -41,9 +42,8 @@ const SidebarComponent = () => {
                     ))
                 }
             </ul>
-            <div className=" px-3 py-2 text-center text-xs">
-                © 2025 Izzatbek Abdusharipov
-                Built with React & Tailwind CSS
+            <div className="px-4 py-1 text-xs">
+                © 2025 Built with React & Tailwind CSS
             </div>
         </div>
     )

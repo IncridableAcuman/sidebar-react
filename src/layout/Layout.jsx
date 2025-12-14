@@ -9,7 +9,7 @@ const Layout = () => {
         <div className={`w-72 ${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900' } shrink-0 overflow-y-scroll overflow-x-hidden`}>
           <Sidebar/>
         </div>
-        <div className='flex-1 p-6 overflow-y'>
+        <div className='flex-1 overflow-y'>
             <Outlet/>
         </div>
     </div>
