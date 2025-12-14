@@ -17,7 +17,7 @@ const SidebarComponent = () => {
     return (
         <div className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
            <div className="py-4 px-5">
-             <button onClick={toggleTheme}>
+             <button onClick={toggleTheme} className="hidden md:block">
                 {theme === 'light' ? <Moon className="cursor-pointer"/> : <Sun className="cursor-pointer"/>}
              </button>
            </div>
@@ -28,10 +28,10 @@ const SidebarComponent = () => {
                     <h2>Izzatbek Abdusharipov</h2>
                 </div>
             </div>
-            <ul className="space-y-6 p-4 ">
+            <ul className="space-y-5 md:space-y-6 p-2 md:p-4">
                 {
                     networks.map((network, index) => (
-                        <li key={index} className={`text-xl p-2 rounded-md transition-all
+                        <li key={index} className={`text-xl md:p-2 px-4 rounded-md transition-all
                          text-gray-400 duration-300 hover:text-blue-500 hover:bg-linear-to-r hover:from-gray-800 hover:to-gray-700 `}>
                             <a href={network.path} className="flex items-center gap-3" >
                                 {network.icons}
