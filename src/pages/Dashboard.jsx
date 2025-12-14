@@ -17,7 +17,7 @@ const Dashboard = () => {
         <h1
           className={`${theme === 'light' ? 'text-white' : 'text-gray-900'} text-2xl md:text-4xl font-semibold`}
         >Technical Skills</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-4 pt-10 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 space-y-4 pt-10 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
 
           <div className={`${theme === 'light' ? 'bg-gray-900 border border-gray-800 text-white hover:bg-gray-800 transition duration-300 hover:shadow-cyan-500' : 'bg-gray-200 text-gray-800'} space-y-4 rounded-lg p-6 shadow-lg md:shadow-2xl`}>
             <h6 className='text-blue-500 text-2xl font-semibold'>Algorithms & Problem Solving</h6>
@@ -209,8 +209,16 @@ const Dashboard = () => {
         <h1
           className={`${theme === 'light' ? 'text-white' : 'text-gray-900'} text-2xl md:text-4xl font-semibold py-4`}
         >Additional Achievments</h1>
-        <div className=""></div>
-        <div className=""></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 space-y-4 pt-10 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+          <div className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:shadow-cyan-500 transition duration-300 hover:bg-gray-800' : 'bg-gray-100 text-gray-900'} p-6 rounded-md shadow-2xl space-y-4`}>
+            <h2 className='text-2xl font-semibold text-blue-500'>Performance Optimization</h2>
+            <p>Successfully scaled a Django-based server to handle 1,000 requests/second by implementing database caching, load balancing with Nginx, and optimizing Gunicorn workers.</p>
+          </div>
+          <div className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:shadow-cyan-500 transition duration-300 hover:bg-gray-800' : 'bg-gray-100 text-gray-900'} p-6 rounded-md shadow-2xl space-y-4`}>
+            <h2 className='text-2xl font-semibold text-blue-500'>Algorithmic Excellence</h2>
+            <p>Proficient in a variety of algorithmic techniques, demonstrated through solving 60+ problems on LeetCode with optimal time and space complexities.</p>
+          </div>
+        </div>
       </div>
     </div>
   )
