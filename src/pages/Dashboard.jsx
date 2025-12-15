@@ -18,9 +18,12 @@ const Dashboard = () => {
         className={`${theme === 'light' ? 'text-white' : 'text-gray-900'} text-2xl md:text-4xl font-semibold`}>Professional Summary</motion.h1>
         <p 
         variants={cardVariants}
-        className={`${theme === 'light' ? 'text-gray-500' : 'text-gray-500'} font-semibold`}>I am a backend developer with a strong interest in software engineering. My main focus is developing backend applications using MERN stack and Java (Spring Boot) technologies. I have experience in database, authentication, API integrations and building real-time applications.
+        className={`${theme === 'light' ? 'text-gray-500' : 'text-gray-500'} font-semibold`}>I am a backend developer with a strong interest in software engineering. 
+        My main focus is developing backend applications using MERN stack and Java (Spring Boot) technologies. 
+        I have experience in database, authentication, API integrations and building real-time applications.
 
-          I am also interested in learning about Docker, microservices and scalable architectures. Building efficient, secure and scalable systems based on software engineering principles is my main goal.</p>
+          I am also interested in learning about Docker, microservices and scalable architectures. 
+          Building efficient, secure and scalable systems based on software engineering principles is my main goal.</p>
       </motion.div>
       {/* technical skills */}
       <div className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}  p-6 rounded-md w-full h-full shadow-lg`}>
@@ -120,14 +123,14 @@ const Dashboard = () => {
         initial={'hidden'}
         whileInView={'visible'}
         viewport={{ once: true, amount: 0.2 }}
-      className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} p-6 my-6 rounded-md w-full h-full shadow-lg`}>
+      className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} p-6 my-6 rounded-md w-full h-full shadow-lg`}>
         <motion.h1
         variants={cardVariants}
           className={`${theme === 'light' ? 'text-white' : 'text-gray-900'} text-2xl md:text-4xl font-semibold`}
         >Professional Expirence</motion.h1>
         <motion.div
         variants={cardVariants} 
-        className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 transition duration-300 rounded-lg shadow-md' : 'bg-white text-gray-900'} p-6 mt-6 space-y-4`}>
+        className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 transition duration-300 rounded-lg shadow-md' : 'bg-gray-100 hover:bg-gray-200 transition duration-300 text-gray-900'} rounded-md p-6 mt-6 space-y-4`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <h2 className='text-blue-500 text-3xl font-semibold'>Freelance Frontend Developer</h2>
             <p className='bg-blue-500 text-white rounded-full py-1 px-3'>Octomber 2025 - Present</p>
@@ -143,7 +146,7 @@ const Dashboard = () => {
           </ol>
         </motion.div>
         {/* backend */}
-        <div className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 transition duration-300 rounded-lg shadow-md' : 'bg-white text-gray-900'} p-6 mt-6 space-y-4`}>
+        <div className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 transition duration-300 rounded-lg shadow-md' : 'bg-gray-100 hover:bg-gray-200 transition duration-300 text-gray-900'} rounded-md p-6 mt-6 space-y-4`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <h2 className='text-blue-500 text-3xl font-semibold'>Backend Developer</h2>
             <p className='bg-blue-500 text-white rounded-full py-1 px-3'>Octomber 2025 - Present</p>
@@ -179,7 +182,7 @@ const Dashboard = () => {
 
           <motion.div 
           variants={cardVariants}
-          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 hover:shadow-cyan-500 transition duration-300' : 'bg-gray-100 text-gray-900'} p-6 shadow-lg rounded-2xl`}>
+          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 hover:shadow-cyan-500 transition duration-300' : 'bg-gray-100 text-gray-900 hover:bg-gray-200 transition duration-300'} p-6 shadow-lg rounded-2xl`}>
             <h2 className='text-2xl py-4 font-semibold text-blue-500'>Django Full-Stack Platform with Google Integrations</h2>
             <div className="space-y-4">
 
@@ -213,7 +216,7 @@ const Dashboard = () => {
 
           <motion.div 
           variants={cardVariants}
-          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 hover:shadow-cyan-500 transition duration-300' : 'bg-gray-100 text-gray-900'} p-6 shadow-lg rounded-2xl`}>
+          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 hover:shadow-cyan-500 transition duration-300' : 'bg-gray-100 text-gray-900 hover:bg-gray-200 transition duration-300'} p-6 shadow-lg rounded-2xl`}>
             <h2 className='text-2xl py-4 font-semibold text-blue-500'>Django Full-Stack Platform with Google Integrations</h2>
             <div className="space-y-4">
 
@@ -261,7 +264,7 @@ const Dashboard = () => {
 
         <motion.div 
         variants={cardVariants}
-        className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 transition duration-300' : 'bg-gray-100 text-gray-900'} p-6 rounded-md shadow-md space-y-4`}>
+        className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:bg-gray-800 transition duration-300' : 'bg-gray-100 text-gray-900 hover:bg-gray-200 transition duration-300'} p-6 rounded-md shadow-md space-y-4`}>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-10">
 
@@ -294,13 +297,13 @@ const Dashboard = () => {
         className="grid grid-cols-1 sm:grid-cols-2 space-y-4 pt-10 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
           <motion.div 
           variants={cardVariants}
-          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:shadow-cyan-500 transition duration-300 hover:bg-gray-800' : 'bg-gray-100 text-gray-900'} p-6 rounded-md shadow-lg space-y-4`}>
+          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:shadow-cyan-500 transition duration-300 hover:bg-gray-800' : 'bg-gray-100 text-gray-900 hover:bg-gray-200 transition duration-300'} p-6 rounded-md shadow-lg space-y-4`}>
             <h2 className='text-2xl font-semibold text-blue-500'>Performance Optimization</h2>
             <p>Successfully scaled a Django-based server to handle 1,000 requests/second by implementing database caching, load balancing with Nginx, and optimizing Gunicorn workers.</p>
           </motion.div>
           <motion.div
           variants={cardVariants} 
-          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:shadow-cyan-500 transition duration-300 hover:bg-gray-800' : 'bg-gray-100 text-gray-900'} p-6 rounded-md shadow-lg space-y-4`}>
+          className={`${theme === 'light' ? 'bg-gray-900 text-white border border-gray-800 hover:shadow-cyan-500 transition duration-300 hover:bg-gray-800' : 'bg-gray-100 text-gray-900 hover:bg-gray-200 transition duration-300'} p-6 rounded-md shadow-lg space-y-4`}>
             <h2 className='text-2xl font-semibold text-blue-500'>Algorithmic Excellence</h2>
             <p>Proficient in a variety of algorithmic techniques, demonstrated through solving 60+ problems on LeetCode with optimal time and space complexities.</p>
           </motion.div>

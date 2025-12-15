@@ -8,7 +8,7 @@ const SidebarComponent = () => {
         { name: 'Github', path: 'https://github.com/IncridableAcuman', icons: <Github /> },
         { name: 'Instagram', path: 'https://www.instagram.com/izzatbekdeveloper/', icons: <Instagram /> },
         { name: 'Leetcode', path: 'https://leetcode.com/u/abdusharipovizzat03/', icons: <Code /> },
-        { name: 'Kep', path: '/https://kep.uz/users/abdusharipovizzat03', icons: <Globe /> },
+        { name: 'Kep', path: 'https://kep.uz/users/abdusharipovizzat03', icons: <Globe /> },
         { name: 'Telegram', path: 'https://leetcode.com/u/abdusharipovizzat03/', icons: <Globe /> },
         { name: 'Medium', path: "#", icons: <Globe /> },
         { name: 'Study', path: 'https://urdu.uz/uz', icons: <University /> },
@@ -18,11 +18,11 @@ const SidebarComponent = () => {
         <div className={`${theme === 'light' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
            <div className="py-4 px-5">
              <button onClick={toggleTheme} className="hidden md:block">
-                {theme === 'light' ? <Moon className="cursor-pointer"/> : <Sun className="cursor-pointer"/>}
+                {theme === 'light' ? <Moon className="cursor-pointer"/> : <Sun className="cursor-pointer text-gray-500"/>}
              </button>
            </div>
             <div className={`flex flex-col items-center p-4 space-y-2 border-b border-dashed ${theme === 'light' ? 'border-gray-700' : "border-gray-300"}`}>
-                <img src="./image.png" alt="profile" className="w-20 h-20  object-cover rounded-full border-4 shadow cursor-pointer" />
+                <img src="./myphoto.jpg" alt="profile" className="w-20 h-20  object-cover rounded-full border-4 shadow cursor-pointer" />
                 <div className="space-y-2 text-center">
                     <h2>Software Engineer</h2>
                     <h2>Izzatbek Abdusharipov</h2>
