@@ -2,45 +2,37 @@ import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../components/SidebarComponent'
 import { UseTheme } from '../provider/ThemeProvider'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const Layout = () => {
-  const { theme, toggleTheme } = UseTheme()
+  const { theme } = UseTheme()
   const [open, setOpen] = useState(false)
-  const isDark = theme === 'dark' // sizning mavjud logikangiz
+  const isDark = theme === 'dark'
 
   return (
-    <div className={`flex h-screen overflow-hidden transition-colors duration-300
-      ${isDark ? 'bg-[#0d0d1f]' : 'bg-slate-100'}`}>
+    <div className={`flex h-screen overflow-hidden transition-colors duration-500 ${
+      isDark ? 'bg-[#050505]' : 'bg-zinc-50'
+    }`}>
 
       {/* ── Mobile topbar ── */}
-      <header className={`md:hidden fixed top-0 left-0 right-0 h-14 z-50 flex items-center justify-between px-4
-        border-b transition-all duration-300
-        ${isDark
-          ? 'bg-[#12122a]/95 backdrop-blur-md border-purple-900/30'
-          : 'bg-white/95 backdrop-blur-md border-indigo-100'}`}>
-        <div className="flex items-center gap-3">
+      <header className={`md:hidden fixed top-0 left-0 right-0 h-16 z-50 flex items-center justify-between px-6 border-b backdrop-blur-md transition-colors duration-500 ${
+        isDark 
+          ? 'border-zinc-800/80 bg-[#0a0a0a]/90 text-zinc-200' 
+          : 'border-zinc-200 bg-white/90 text-zinc-800'
+      }`}>
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setOpen(true)}
-            className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all
-              ${isDark
-                ? 'bg-indigo-500/10 border-indigo-500/25 text-indigo-300 hover:bg-indigo-500/20'
-                : 'bg-indigo-50 border-indigo-200 text-indigo-500 hover:bg-indigo-100'}`}>
-            <Menu size={16} />
+            className={`w-10 h-10 flex items-center justify-center transition-colors ${
+              isDark ? 'text-zinc-400 hover:text-zinc-100' : 'text-zinc-600 hover:text-black'
+            }`}>
+            <Menu size={20} strokeWidth={1.5} />
           </button>
-          <h1 className={`text-sm font-semibold ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
-            Izzatbek Abdusharipov
+          <h1 className="text-sm font-medium tracking-wide">
+            I. Abdusharipov
           </h1>
         </div>
-        <button
-          onClick={toggleTheme}
-          className={`w-8 h-8 rounded-lg flex items-center justify-center border transition-all
-            ${isDark
-              ? 'bg-indigo-500/10 border-indigo-500/25 text-indigo-300 hover:bg-indigo-500/20'
-              : 'bg-indigo-50 border-indigo-200 text-indigo-500 hover:bg-indigo-100'}`}>
-          {isDark ? <Moon size={15} /> : <Sun size={15} />}
-        </button>
       </header>
 
       {/* ── Mobile drawer ── */}
@@ -52,9 +44,9 @@ const Layout = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.3 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 md:hidden"
             />
             <motion.aside
               key="drawer"
@@ -62,19 +54,16 @@ const Layout = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className={`fixed top-0 left-0 z-50 w-72 h-screen md:hidden
-                border-r shadow-2xl
-                ${isDark
-                  ? 'bg-linear-to-b from-[#12122a] to-[#1a1535] border-purple-900/30 shadow-purple-900/30'
-                  : 'bg-linear-to-b from-white to-slate-50 border-indigo-100 shadow-indigo-100'}`}>
-              <div className="flex justify-end p-4">
+              className={`fixed top-0 left-0 z-50 w-72 h-screen md:hidden border-r shadow-2xl ${
+                isDark ? 'border-zinc-800 bg-[#0a0a0a]' : 'border-zinc-200 bg-white'
+              }`}>
+              <div className="absolute top-4 right-4 z-50">
                 <button
                   onClick={() => setOpen(false)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all
-                    ${isDark
-                      ? 'bg-white/5 border-white/10 text-slate-400 hover:bg-white/10 hover:text-slate-200'
-                      : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200 hover:text-slate-600'}`}>
-                  <X size={14} />
+                  className={`w-8 h-8 flex items-center justify-center transition-colors ${
+                    isDark ? 'text-zinc-500 hover:text-zinc-200' : 'text-zinc-400 hover:text-black'
+                  }`}>
+                  <X size={20} strokeWidth={1.5} />
                 </button>
               </div>
               <Sidebar />
@@ -84,18 +73,19 @@ const Layout = () => {
       </AnimatePresence>
 
       {/* ── Desktop sidebar ── */}
-      <aside className={`hidden md:flex flex-col w-72 shrink-0 h-screen overflow-y-auto
-        border-r transition-colors duration-300
-        ${isDark
-          ? 'bg-linear-to-b from-[#12122a] to-[#1a1535] border-purple-900/25'
-          : 'bg-linear-to-b from-white to-slate-50 border-indigo-100'}`}>
+      <aside className={`hidden md:flex flex-col w-72 shrink-0 h-screen overflow-y-auto border-r transition-colors duration-500 ${
+        isDark ? 'border-zinc-800/80 bg-[#0a0a0a]' : 'border-zinc-200 bg-white'
+      }`}>
         <Sidebar />
       </aside>
 
       {/* ── Main content ── */}
-      <main className={`flex-1 h-screen overflow-y-auto pt-14 md:pt-0 transition-colors duration-300
-        ${isDark ? 'bg-[#0d0d1f]' : 'bg-slate-50'}`}>
-        <Outlet />
+      <main className={`flex-1 h-screen overflow-y-auto pt-16 md:pt-0 transition-colors duration-500 ${
+        isDark ? 'bg-[#050505]' : 'bg-zinc-50'
+      }`}>
+        <div className="max-w-5xl mx-auto">
+          <Outlet />
+        </div>
       </main>
     </div>
   )

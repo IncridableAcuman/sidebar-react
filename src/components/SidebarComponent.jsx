@@ -1,122 +1,110 @@
 import { UseTheme } from "../provider/ThemeProvider"
+import { Github, Linkedin, Instagram, Code2, Globe, Send, Mail, Phone, Sun, Moon } from 'lucide-react'
 
 const SidebarComponent = () => {
   const { theme, toggleTheme } = UseTheme()
-
-  const networks = [
-    { name: 'LinkedIn',   path: "https://www.linkedin.com/in/izzatbek-abdusharipov/", icon: '💼', badge: 'PRO' },
-    { name: 'GitHub',     path: 'https://github.com/IncridableAcuman',                 icon: '🐙' },
-    { name: 'Instagram',  path: 'https://www.instagram.com/izzatbekdeveloper/',        icon: '📸' },
-    { name: 'LeetCode',   path: 'https://leetcode.com/u/abdusharipovizzat03/',          icon: '⚡' },
-    { name: 'Kep',        path: 'https://kep.uz/users/abdusharipovizzat03',             icon: '🌐' },
-    { name: 'Telegram',   path: 'https://t.me/izzatbekdeveloper',                       icon: '✈️', section: true },
-    { name: 'Medium',     path: '#',                                                    icon: '✍️', badge: 'SOON' },
-    { name: 'Study',      path: 'https://urdu.uz/uz',                                  icon: '🎓' },
-  ]
-
   const isDark = theme === 'dark'
 
+  const networks = [
+    { name: 'Email',      path: 'mailto:abdusharipovizzat03@gmail.com', icon: <Mail size={16} /> },
+    { name: 'Phone',      path: 'tel:+998507022171',                    icon: <Phone size={16} /> },
+    { name: 'LinkedIn',   path: 'https://www.linkedin.com/in/izzatbek-abdusharipov/', icon: <Linkedin size={16} /> },
+    { name: 'GitHub',     path: 'https://github.com/IncridableAcuman',                 icon: <Github size={16} /> },
+    { name: 'LeetCode',   path: 'https://leetcode.com/u/abdusharipovizzat03/',          icon: <Code2 size={16} /> },
+    { name: 'Kep',        path: 'https://kep.uz/users/abdusharipovizzat03',             icon: <Globe size={16} /> },
+    { name: 'Telegram',   path: 'https://t.me/izzatbekdeveloper',                       icon: <Send size={16} /> },
+    { name: 'Instagram',  path: 'https://www.instagram.com/izzatbekdeveloper/',        icon: <Instagram size={16} /> },
+  ]
+
   return (
-    <div className={`relative flex flex-col h-full overflow-hidden transition-all duration-300
-      ${isDark
-        ? 'bg-[#12122a] border-r border-purple-900/30'
-        : 'bg-linear-to-b from-slate-50 to-indigo-50/60 border-r border-indigo-100'}`}>
-
-      {/* Purple glow overlay — dark only */}
-      {isDark && (
-        <div className="pointer-events-none absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse 200px 200px at 50% 0%, rgba(99,102,241,.15) 0%, transparent 70%)' }} />
-      )}
-
-      {/* Theme toggle */}
-      <div className="relative z-10 flex justify-end p-4 pb-2">
-        <button onClick={toggleTheme}
-          className={`w-9 h-9 rounded-full flex items-center justify-center text-sm transition-all duration-200
-            hover:rotate-12 hover:scale-110
-            ${isDark
-              ? 'bg-indigo-500/10 border border-purple-500/30 text-purple-300'
-              : 'bg-indigo-50 border border-indigo-200 text-indigo-500'}`}>
-          {isDark ? '🌙' : '☀️'}
+    <div className={`relative flex flex-col h-full overflow-hidden transition-all duration-500 font-sans border-r ${
+      isDark 
+        ? 'bg-[#0a0a0a] border-zinc-800/80 text-zinc-300' 
+        : 'bg-white border-zinc-200 text-zinc-700'
+    }`}>
+      
+      {/* Theme toggle button */}
+      <div className="relative z-10 flex justify-end p-5 pb-0">
+        <button 
+          onClick={toggleTheme}
+          aria-label="Toggle Theme"
+          className={`w-9 h-9 rounded-md flex items-center justify-center transition-all duration-300 border ${
+            isDark 
+              ? 'border-zinc-800 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 hover:text-white' 
+              : 'border-zinc-200 bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-black'
+          }`}>
+          {isDark ? <Sun size={15} /> : <Moon size={15} />}
         </button>
       </div>
 
-      {/* Avatar */}
-      <div className="relative z-10 flex flex-col items-center px-4 pb-5">
-        <div className="p-0.75 rounded-full mb-3"
-          style={{ background: 'linear-gradient(135deg,#6366f1,#8b5cf6,#06b6d4)',
-                   boxShadow: '0 0 20px rgba(99,102,241,.4)' }}>
-          <div className={`w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold
-            ${isDark ? 'bg-linear-to-br from-indigo-950 to-blue-950 text-indigo-300'
-                     : 'bg-linear-to-br from-indigo-100 to-purple-100 text-indigo-600'}`}>
-            IA
-          </div>
+      {/* Avatar & Info */}
+      <div className="relative z-10 flex flex-col items-center px-6 pt-4 pb-6">
+        <div className={`w-24 h-24 rounded-full flex items-center justify-center text-2xl font-light tracking-widest mb-4 border ${
+          isDark 
+            ? 'bg-zinc-900 border-zinc-800 text-zinc-300' 
+            : 'bg-zinc-100 border-zinc-200 text-zinc-800'
+        }`}>
+          IA
         </div>
 
-        {/* Status dot */}
-        <div className="w-3 h-3 rounded-full bg-green-400 -mt-3 ml-14 mb-2 border-2
-          shadow-[0_0_6px_rgba(34,197,94,.6)]"
-          style={{ borderColor: isDark ? '#12122a' : '#f8f7ff' }} />
+        {/* Status */}
+        <div className="flex items-center gap-2 mb-4">
+          <div className={`w-2 h-2 rounded-full animate-pulse ${isDark ? 'bg-zinc-400' : 'bg-emerald-500'}`} />
+          <span className={`text-[10px] uppercase tracking-[0.2em] font-medium ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+            Available
+          </span>
+        </div>
 
-        <p className={`font-semibold text-sm ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
+        <h1 className={`font-medium text-lg tracking-wide text-center ${isDark ? 'text-zinc-100' : 'text-zinc-900'}`}>
           Izzatbek Abdusharipov
+        </h1>
+        <p className={`text-xs uppercase tracking-widest mt-2 font-medium text-center ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+          Full Stack Developer
         </p>
-        <p className={`text-xs uppercase tracking-widest mt-1 font-medium
-          ${isDark ? 'text-purple-400' : 'text-indigo-500'}`}>
-          Software Engineer
-        </p>
-        <span className={`mt-2 px-3 py-1 rounded-full text-xs
-          ${isDark ? 'bg-indigo-500/15 border border-indigo-500/25 text-purple-300'
-                   : 'bg-indigo-50 border border-indigo-200 text-indigo-600'}`}>
-          ✦ Open to work
-        </span>
       </div>
 
-      {/* Divider */}
-      <div className="h-px mx-4 mb-1"
-        style={{ background: isDark
-          ? 'linear-gradient(90deg,transparent,rgba(139,92,246,.3),transparent)'
-          : 'linear-gradient(90deg,transparent,rgba(99,102,241,.2),transparent)' }} />
+      <div className={`h-px mx-6 mb-4 bg-linear-to-r ${
+        isDark 
+          ? 'from-transparent via-zinc-800 to-transparent' 
+          : 'from-transparent via-zinc-200 to-transparent'
+      }`} />
 
       {/* Nav */}
-      <nav className="relative z-10 flex-1 overflow-y-auto px-2 py-3 space-y-0.5">
+      <nav className="relative z-10 flex-1 overflow-y-auto px-4 py-2 space-y-1">
         {networks.map((item, i) => (
-          <div key={i}>
-            {item.section && (
-              <p className={`text-[9px] font-semibold uppercase tracking-[2px] px-2 pt-3 pb-1
-                ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
-                Socials
-              </p>
-            )}
-            <a href={item.path} target="_blank" rel="noreferrer"
-              className={`group flex items-center gap-2.5 px-3 py-2 rounded-xl transition-all duration-200
-                hover:translate-x-1 text-sm
-                ${isDark
-                  ? 'text-slate-400 hover:text-slate-200 hover:bg-indigo-500/10'
-                  : 'text-slate-500 hover:text-slate-800 hover:bg-indigo-50'}`}>
-              <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm shrink-0 transition-all
-                ${isDark
-                  ? 'bg-white/3 group-hover:bg-indigo-500/20'
-                  : 'bg-slate-100 group-hover:bg-indigo-100'}`}>
-                {item.icon}
-              </span>
-              <span className="flex-1">{item.name}</span>
-              {item.badge && (
-                <span className={`text-[9px] font-bold tracking-wide px-1.5 py-0.5 rounded
-                  ${isDark ? 'bg-indigo-500/20 text-indigo-400' : 'bg-indigo-100 text-indigo-600'}`}>
-                  {item.badge}
-                </span>
-              )}
-            </a>
-          </div>
+          <a key={i} href={item.path} target="_blank" rel="noreferrer"
+            className={`group flex items-center gap-4 px-4 py-3 rounded-md transition-all duration-300 ${
+              isDark ? 'hover:bg-zinc-900' : 'hover:bg-zinc-100'
+            }`}>
+            <span className={`transition-colors ${
+              isDark ? 'text-zinc-500 group-hover:text-zinc-200' : 'text-zinc-400 group-hover:text-zinc-900'
+            }`}>
+              {item.icon}
+            </span>
+            <span className={`flex-1 text-sm font-light tracking-wide transition-colors ${
+              isDark ? 'text-zinc-400 group-hover:text-zinc-200' : 'text-zinc-600 group-hover:text-zinc-900'
+            }`}>
+              {item.name}
+            </span>
+          </a>
         ))}
       </nav>
 
+      {/* Languages */}
+      <div className="px-8 pb-4">
+         <p className={`text-[10px] uppercase tracking-widest mb-3 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Languages</p>
+         <div className={`space-y-2 text-xs font-light ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
+            <div className="flex justify-between"><span>Uzbek</span><span className={isDark ? 'text-zinc-500' : 'text-zinc-400'}>Native</span></div>
+            <div className="flex justify-between"><span>English</span><span className={isDark ? 'text-zinc-500' : 'text-zinc-400'}>A2-B1</span></div>
+            <div className="flex justify-between"><span>Russian</span><span className={isDark ? 'text-zinc-500' : 'text-zinc-400'}>A1</span></div>
+         </div>
+      </div>
+
       {/* Footer */}
-      <div className={`relative z-10 px-4 py-3 text-[10px] leading-relaxed
-        border-t ${isDark ? 'border-purple-900/20 text-slate-600' : 'border-indigo-100 text-slate-400'}`}>
-        <span className={isDark ? 'text-purple-800' : 'text-indigo-300'}>© 2025</span> Izzatbek Abdusharipov<br />
-        Built with <span className={isDark ? 'text-purple-800' : 'text-indigo-300'}>React</span> &{' '}
-        <span className={isDark ? 'text-purple-800' : 'text-indigo-300'}>Tailwind CSS</span>
+      <div className={`relative z-10 px-8 py-5 text-[10px] leading-relaxed border-t tracking-wider ${
+        isDark ? 'border-zinc-900 text-zinc-600' : 'border-zinc-100 text-zinc-400'
+      }`}>
+        © {new Date().getFullYear()} <br/> Crafted with minimalism.
       </div>
     </div>
   )
