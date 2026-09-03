@@ -24,7 +24,7 @@ const SidebarComponent = () => {
     }`}>
       
       {/* Theme toggle button */}
-      <div className="relative z-10 flex justify-end p-5 pb-0">
+      <div className="relative z-10 flex justify-start p-5 pb-0">
         <button 
           onClick={toggleTheme}
           aria-label="Toggle Theme"
